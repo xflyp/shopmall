@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span{
+      position: absolute;
+      color: deeppink;
+      font-size: 30px;
+      display: block;
+      width: 500px;
+      margin-right: 20%;
+      bottom: 100px;
+      font-family: monospace;
+    }
+    h2 {
+      color: blue;
+      cursor: pointer;
+    }
+
+    p {
+      color: yellow;
+      cursor: pointer;
+      display: none;
+      position: absolute;
+    }
+
+    div {
+      display: none;
+    }
+
+    div h1 {
+      position: fixed;
+      top: 20px;
+      font-style: italic;
+      color: pink;
+    }
+
+    body {
+      height: 100vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      color: #fff;
+    }
+
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none
+    }
+
+    ul {
+      height: 200px;
+      display: flex;
+    }
+
+    li {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: red;
+      margin-right: 20px;
+    }
+
+    li:nth-child(1) {
+      background: red;
+      animation: love1 4s 0s infinite;
+    }
+
+    li:nth-child(2) {
+      background: darkturquoise;
+      animation: love2 4s 0.2s infinite;
+    }
+
+    li:nth-child(3) {
+      background: darksalmon;
+      animation: love3 4s 0.4s infinite;
+    }
+
+    li:nth-child(4) {
+      background: deeppink;
+      animation: love4 4s 0.6s infinite;
+    }
+
+    li:nth-child(5) {
+      background: yellow;
+      animation: love5 4s 0.8s infinite;
+    }
+
+    li:nth-child(6) {
+      background: deeppink;
+      animation: love4 4s 1s infinite;
+    }
+
+    li:nth-child(7) {
+      background: darksalmon;
+      animation: love3 4s 1.2s infinite;
+    }
+
+    li:nth-child(8) {
+      background: darkturquoise;
+      animation: love2 4s 1.4s infinite;
+    }
+
+    li:nth-child(9) {
+      background: red;
+      animation: love1 4s 1.8s infinite;
+    }
+
+    @keyframes love1 {
+
+      30%,
+      50% {
+        height: 60px;
+        transform: translateY(-30px);
+      }
+
+      70%,
+      100% {
+        height: 0;
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes love2 {
+
+      30%,
+      50% {
+        height: 125px;
+        transform: translateY(-60px);
+      }
+
+      70%,
+      100% {
+        height: 0;
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes love3 {
+
+      30%,
+      50% {
+        height: 160px;
+        transform: translateY(-75px);
+      }
+
+      70%,
+      100% {
+        height: 0;
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes love4 {
+
+      30%,
+      50% {
+        height: 180px;
+        transform: translateY(-60px);
+      }
+
+      70%,
+      100% {
+        height: 0;
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes love5 {
+
+      30%,
+      50% {
+        height: 200px;
+        transform: translateY(-45px);
+      }
+
+      70%,
+      100% {
+        height: 0;
+        transform: translateY(0px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>点这里，我家小傻子</h2>
+  <p>哈哈，既然这么听话就一直点一下去吧！</p>
+  <p style="left: 0;top: 0;">还能点</p>
+  <p style="left: 0;bottom: 0;">我看你能点多久</p>
+  <p style="right: 0;top: 0;">别点了，这次真的没了</p>
+  <p style="right: 0;bottom: 0;">再点就点破了。。。</p>
+  <p>好吧，你可真执着</p>
+  <div>
+    <h1>我爱你，宝贝老婆，520快乐</h1>
+    <span>送你一颗只为你跳动的心</span>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script>
+    var h2 = document.getElementsByTagName('h2')[0];
+    var p = document.getElementsByTagName('p');
+    var div = document.getElementsByTagName('div')[0]
+
+    h2.onclick = function () {
+      p[0].style.display = 'block';
+      h2.style.display = "none"
+    };
+    for (let i = 0; i < 5; i++) {
+      p[i].onclick = function () {
+        p[i].style.display = "none";
+        p[i + 1].style.display = "block"
+      }
+    }
+    p[5].onclick = function () {
+      p[5].style.display = "none";
+      div.style.display = "block"
+    }
+  </script>
+</body>
+
+</html>
